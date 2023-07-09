@@ -140,6 +140,13 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          env:
+            POSTGRES_DB: kittygram
+            POSTGRES_USER: kittygram_user
+            POSTGRES_PASSWORD: kittygram_password
+            DB_NAME: kittygram
+            DB_HOST: db
+            DB_PORT: 5432
           script: >
             cd kittygram
 
