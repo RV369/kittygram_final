@@ -1,10 +1,11 @@
-version: "3"
+version: "3.0"
+
 volumes:
   pg_data:
-  static:
+  backend_static:
   media:
 services:
-  db:
+  kittygram_final-db:
     image: postgres:13
     env_file: .env
     volumes:
@@ -13,19 +14,20 @@ services:
     build: ./backend/
     env_file: .env
     volumes:
-      - static:/backend_static/
+      - backend_static:/backend_static/
       - media:/media/
   frontend:
     env_file: .env
     build: ./frontend/
-    command: cp -r /app/build/. /static/
+    command: cp -r /app/build/. /frontend_static/
     volumes:
-      - static:/static/
+      - backend_static:/frontend_static/
   gateway:
     build: ./nginx/
     env_file: .env
     volumes:
-      - static:/static/
+      - backend_static:/backend_static/
+      - backend_static:/frontend_static/
       - media:/media/
     ports:
       - 9000:80
