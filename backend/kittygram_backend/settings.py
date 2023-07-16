@@ -1,17 +1,17 @@
 import os
+
 from pathlib import Path
-# from dotenv import load_dotenv 
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG')
 
-if DEBUG == True:
+if DEBUG:
     ALLOWED_HOSTS = []
-elif DEBUG == False:
+elif not DEBUG:
     ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'cats.apps.CatsConfig',
-    # 'dotenv',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +111,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated', 
+        'rest_framework.permissions.IsAuthenticated',
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
