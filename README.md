@@ -29,6 +29,14 @@ dockerhub_username: ваш_логин_на_докерхабе
 автор Демидов Ю.Е.
 В проекте используется технология контейнеризации Docker и автоматизация процесса развертывания Django-проектов.
 
+Примеры запросов:
+Главная страница
+https://kittygram369.hopto.org/
+Админка:
+https://kittygram369.hopto.org/admin
+Api
+https://kittygram369.hopto.org/api
+
 Как запустить проект: Клонировать репозиторий и перейти в него в командной строке:
 
 git clone git@github.com:RV369/kittygram_final.git
