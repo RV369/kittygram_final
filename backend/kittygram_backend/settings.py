@@ -126,7 +126,4 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8008',
     'http://localhost:9000',
     'http://localhost:3000',
-    ]
-# CORS_ALLOWED_ORIGINS = ['http://localhost:8000']
-# CORS_ORIGIN_ALLOW_ALL = False
-
+]
