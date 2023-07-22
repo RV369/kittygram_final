@@ -20,9 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'rest_framework.authtoken',
     'rest_framework',
+    'corsheaders',
     'djoser',
     'cats.apps.CatsConfig',
 ]
@@ -104,7 +104,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'collected_static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -121,4 +121,12 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:88',
+    'http://localhost:8008',
+    'http://localhost:9000',
+    'http://localhost:3000',
+    ]
+# CORS_ALLOWED_ORIGINS = ['http://localhost:8000']
+# CORS_ORIGIN_ALLOW_ALL = False
+
